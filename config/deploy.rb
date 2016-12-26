@@ -1,14 +1,14 @@
 # config valid only for current version of Capistrano
 lock "3.7.1"
 
-set :application, "my_app_name"
-set :repo_url, "git@example.com:me/my_repo.git"
+set :application, "blog-1"
+set :repo_url, "git@github.com:3014zhangshuo/blog-1.git"
 
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
 
 # Default deploy_to directory is /var/www/my_app_name
-# set :deploy_to, "/var/www/my_app_name"
+ set :deploy_to, "/home/apps/blog-1"
 
 # Default value for :format is :airbrussh.
 # set :format, :airbrussh
@@ -22,7 +22,7 @@ set :repo_url, "git@example.com:me/my_repo.git"
 
 # Default value for :linked_files is []
 # append :linked_files, "config/database.yml", "config/secrets.yml"
-
+set :linked_files, fetch(:linked_files, []).push('config/database.yml', 'config/secrets.yml')
 # Default value for linked_dirs is []
 # append :linked_dirs, "log", "tmp/pids", "tmp/cache", "tmp/sockets", "public/system"
 
